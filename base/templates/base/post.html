@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="main-container">
+
+        <div>
+            <img src="{{ post.thumbnail.url }}" alt="rasm">
+        </div>
+                <button class="btn btn-primary"><a href="{% url 'update_post' post.slug %}">Edit</a> </button>
+    <div>
+
+            <h1>{{ post.headline }}</h1>
+            <h2>{{ post.sub_headline }}</h2>
+            <p>{{ post.body | safe}}</p>
+
+
+
+
+
+    </div>
+
+    </div>
+
+{% endblock %}
