@@ -1,6 +1,8 @@
 from django.urls import path
 
-from .views import home, posts, post, profile, create_post, update_post, delete_post, sendEmail
+from .views import home, posts, post, profile, create_post, update_post, \
+    delete_post, sendEmail, loginPage
+from . import views
 
 urlpatterns = [
     path('', home, name='home'),
@@ -14,5 +16,13 @@ urlpatterns = [
     path('delete_post/<slug:slug>/', delete_post, name='delete_post'),
 
     path('send_email/', sendEmail, name="send_email"),
+    # Authenticate
+    path('login/', loginPage, name="login"),
+    path('register/', views.registerPage, name="register" ),
+    path('logout/', views.logout1, name="logout"),
+
+    # Profile
+    path('accounts/', views.userAccount, name='account'),
+    path('update_profile/', views.updateProfile, name='update_profile'),
 
 ]

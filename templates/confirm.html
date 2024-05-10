@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    
+    <div class="main-container">
+        <h1>Confirm password</h1>
+        <p>Reset passowrd</p>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% form|crispy %}
+            
+            <br>
+            <input class="btn btn-primary" type="submit" value="Change my password">
+            
+        </form>
+    
+    </div>
+    
+{% endblock %}
